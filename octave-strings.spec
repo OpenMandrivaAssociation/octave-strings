@@ -1,15 +1,15 @@
 %global octpkg strings
 
 Summary:	Additional functions for manipulation and analysis of strings with Octave
-Name:		octave-%{octpkg}
+Name:		octave-strings
 Version:	1.3.0
-Release:	1
-Source0:	https://downloads.sourceforge.net/octave/%{octpkg}-%{version}.tar.gz
-License:	GPLv3+ and BSD
+Release:	2
+License:	GPLv3+ and FreeBSD
 Group:		Sciences/Mathematics
-Url:		https://packages.octave.org/%{octpkg}/
+Url:		https://packages.octave.org/strings/
+Source0:	https://downloads.sourceforge.net/octave/strings-%{version}.tar.gz
 
-BuildRequires:	octave-devel >= 3.8.0
+BuildRequires:  octave-devel >= 3.8.0
 BuildRequires:	pkgconfig(libpcre)
 
 Requires:	octave(api) = %{octave_api}
@@ -23,18 +23,16 @@ Additional functions for manipulation and analysis of strings with Octave.
 %files
 %license COPYING
 %doc NEWS
-%dir %{octpkglibdir}
-%{octpkglibdir}/*
 %dir %{octpkgdir}
 %{octpkgdir}/*
+%dir %{octpkglibdir}
+%{octpkglibdir}/*
+#{_metainfodir}/*.metainfo.xml
 
 #---------------------------------------------------------------------------
 
 %prep
 %autosetup -p1 -n %{octpkg}-%{version}
-
-# remove backup files
-find . -name \*~ -delete
 
 %build
 %set_build_flags
