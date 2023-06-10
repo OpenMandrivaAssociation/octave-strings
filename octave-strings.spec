@@ -2,8 +2,8 @@
 
 Summary:	Additional functions for manipulation and analysis of strings with Octave
 Name:		octave-strings
-Version:	1.3.0
-Release:	2
+Version:	1.3.1
+Release:	1
 License:	GPLv3+ and FreeBSD
 Group:		Sciences/Mathematics
 Url:		https://packages.octave.org/strings/
